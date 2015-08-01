@@ -17,10 +17,10 @@ var hero = {
         SCREEN_HEIGHT = window.innerHeight;
 
     // prepare camera
-    var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
+    var VIEW_ANGLE = 50, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
     this.scene.add(this.camera);
-    this.camera.position.set(0, 100, 300);
+    this.camera.position.set(30, 20, -50);
     this.camera.lookAt(new THREE.Vector3(0,0,0));
 
     // prepare renderer
@@ -61,11 +61,11 @@ var hero = {
     this.scene.add(spLight);
 
     // add simple ground
-    var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
-    ground.receiveShadow = true;
-    ground.position.set(0, 0, 0);
-    ground.rotation.x = -Math.PI / 2;
-    this.scene.add(ground);
+    // var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
+    // ground.receiveShadow = true;
+    // ground.position.set(0, 0, 0);
+    // ground.rotation.x = -Math.PI / 2;
+    // this.scene.add(ground);
 
     // load a model
     this.loadModel();
@@ -90,9 +90,9 @@ oLoader.load('models/mask1.obj', function(object, materials) {
       child.receiveShadow = true;
     }
   });
-  
+
   object.position.x = 0;
-  object.position.y = 1;
+  object.position.y = -4;
   object.position.z = 0;
   object.scale.set(100, 100, 100);
   hero.scene.add(object);
