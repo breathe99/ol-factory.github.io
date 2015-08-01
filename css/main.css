@@ -38,3 +38,117 @@
     animation-duration: 1s;
     animation-delay: 1s;
 }
+
+/*Email input*/
+.email {
+    margin: 0 auto;
+    width: 100%;
+}
+
+input[type="email"] {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 260px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    -ms-border-radius: none;
+    -o-border-radius: none;
+    border-radius: none;
+
+    color: rgba(255,255,255,0.6);
+
+    padding: 10px;
+    border: solid 4px rgb(51, 51, 51);
+    background: transparent;
+
+    -webkit-transition: border 0.3s;
+    -moz-transition: border 0.3s;
+    -o-transition: border 0.3s;
+    transition: border 0.3s;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border: solid 4px #fff;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+:-moz-placeholder {
+   color: rgba(255,255,255,0.6);
+   opacity:  1;
+}
+::-moz-placeholder {
+   color: rgba(255,255,255,0.6);
+   opacity:  1;
+}
+:-ms-input-placeholder {
+   color: rgba(255,255,255,0.6);
+}
+
+input[type="email"]:focus::-webkit-input-placeholder {
+    color: #fff;
+}
+input[type="email"]:focus:-moz-placeholder {
+   color: #fff;
+   opacity:  1;
+}
+input[type="email"]:focus::-moz-placeholder {
+   color: #fff;
+   opacity:  1;
+}
+input[type="email"]:focus:-ms-input-placeholder {
+   color: #fff;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    width: 110px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    -ms-border-radius: none;
+    -o-border-radius: none;
+    border-radius: none;
+
+    color: rgba(255,255,255,0.6);
+
+    padding: 14px;
+    border: none;
+    background: rgb(51, 51, 51);
+
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+    background: #fff;
+    color: rgb(51, 51, 51);
+}
