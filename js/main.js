@@ -11,13 +11,13 @@ var hero = {
 
     // create main scene
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0xcce0ff, 0.0003);
+    this.scene.fog = new THREE.FogExp2(0x416266, 0.0003);
 
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
 
     // prepare camera
-    var VIEW_ANGLE = 50, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
+    var VIEW_ANGLE = 30, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
     this.scene.add(this.camera);
     this.camera.position.set(30, 20, -50);
@@ -91,8 +91,8 @@ oLoader.load('models/mask1.obj', function(object, materials) {
     }
   });
 
-  object.position.x = 0;
-  object.position.y = -4;
+  object.position.x = 3;
+  object.position.y = -5;
   object.position.z = 0;
   object.scale.set(100, 100, 100);
   hero.scene.add(object);

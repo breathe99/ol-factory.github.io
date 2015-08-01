@@ -1,0 +1,40 @@
+#headline {
+  position: absolute;
+  text-align: center;
+  right: 5%;
+  width: 35%;
+  top: 25%;
+}
+/*Typeography for the headline*/
+#heroText {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+#heroSubtext {
+    font-family: 'Lato', sans-serif;
+}
+#heroDesc {
+    font-family: 'Noto Serif', serif;
+    color: rgba(255,255,255,0.6);
+    margin-top: 40px;
+    margin-bottom: 55px;
+    font-size: 1.375em;
+}
+.fadeFirst {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+}
+
+.fadeSecond {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    animation-duration: 1s;
+    animation-delay: 1s;
+}
