@@ -91,8 +91,8 @@ oLoader.load('models/mask1.obj', function(object, materials) {
     }
   });
 
-  object.position.x = 3;
-  object.position.y = -5;
+  object.position.x = 0;
+  object.position.y = -4;
   object.position.z = 0;
   object.scale.set(100, 100, 100);
   hero.scene.add(object);
