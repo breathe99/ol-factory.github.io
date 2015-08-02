@@ -11,7 +11,7 @@ var hero = {
 
     // create main scene
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0x416266, 0.0003);
+    this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0003);
 
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;

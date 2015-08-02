@@ -2,44 +2,53 @@
 <html lang="en" class="no-js">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Trunk | Ol' Factory</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:700|Varela+Round|Noto+Serif:400,400italic|Open+Sans:700italic,400|Ralway:800" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/animate.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Trunk | Ol' Factory</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:700|Varela+Round|Noto+Serif:400,400italic|Open+Sans:700italic,400|Ralway:800" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
-    <!--[if lt IE 10]>
+  <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div id="headline">
-      <div class="fluid-container">
-        <div class="row">
-          <div class="col-md-12">
-            <img id="logo" class="animated fadeIn fadeFirst" src="img/logo.png" alt="Trunk Logo">
-            <h1 id="heroText" class="animated fadeIn fadeFirst"><b>Trunk</b></h1>
-            <p id="heroDesc" class="animated fadeIn fadeFirst">A lightweight respirator that protects commuters &amp; their communities.</p>
-            <div class="email animated fadeIn fadeSecond">
-                            <input type="email" placeholder="Subscribe to email updates">
-                            <input type="submit" value="Confirm" name="subscribe">
-            </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="top">
+        <img id="olfactory" class="" src="img/OlFactory-Logo.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6" id="top">
+        <img id="trunk" class="" src="img/Trunk_Render.png">
+      </div>
+      <div class="col-md-6">
+        <div id="headline">
+          <img id="logo" class="animated fadeIn fadeFirst" src="img/Trunk-Logo.png" alt="Trunk Logo">
+          <!--<h1 id="heroText" class="animated fadeIn fadeFirst"><b>Trunk</b></h1>-->
+          <p id="heroDesc" class="animated fadeIn fadeFirst">A lightweight respirator, unparalleled in protection and style.</p>
+          <div class="email animated fadeIn fadeSecond center-block">
+            <input type="email" placeholder="Subscribe to email updates">
+            <input type="submit" value="Confirm" name="subscribe">
           </div>
         </div>
       </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/three.min.js"></script>
-    <script src="js/OBJLoader.js"></script>
-    <script src="js/threex.windowresize.js"></script>
-    <script src="js/OrbitControls.js"></script>
-    <script src="js/stats.min.js"></script>
-    <script src="js/main.js"></script>
+    <div class="row">
+      <div class="col-md-12" id="bottom">
+        <a href="render/"><button id="renderButton" type="button" class="btn btn-default">View in 3D</button></a>
+        <p class="renderWarning">(warning: this is hard on browsers!)</p>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
 </body>
 
 </html>
