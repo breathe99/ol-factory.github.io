@@ -25,6 +25,7 @@ body {
     color: rgb(51, 51, 51);
 }
 #heroDesc {
+  text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   color: #fff;
