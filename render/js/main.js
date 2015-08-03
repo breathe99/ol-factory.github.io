@@ -167,8 +167,19 @@ function initializeLesson() {
   animate();
 }
 
-if (window.addEventListener)
-  window.addEventListener('load', initializeLesson, false);
-else if (window.attachEvent)
-  window.attachEvent('onload', initializeLesson);
-else window.onload = initializeLesson;
+if (Modernizr.webgl && Modernizr.canvas) {
+    console.log("supported");
+    if (window.addEventListener) {
+        window.addEventListener('load', initializeLesson, false);
+    } else if (window.attachEvent) {
+        window.attachEvent('onload', initializeLesson);
+    } else {
+        window.onload = initializeLesson;
+    }
+} else {
+    console.log("not supported");
+    var notSupported = document.createElement("div");
+    notSupported.setAttribute("class", "notSupported");
+    notSupported.style.cssText = "text-align: center;";
+    document.body.appendChild(notSupported);
+} 
