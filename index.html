@@ -28,7 +28,9 @@
     <div class="row">
       <div class="col-md-6" id="mid">
         <img id="trunk" class="" src="img/Trunk_Render.png">
-        <a href="render/"><button id="renderButton" type="button" class="btn btn-default">View in 3D</button></a>
+        <a href="render/">
+          <button id="renderButton" type="button" class="btn btn-default">View in 3D</button>
+        </a>
         <p class="renderWarning">(warning: this is hard on browsers!)</p>
       </div>
       <div class="col-md-6">
@@ -37,8 +39,50 @@
           <!--<h1 id="heroText" class="animated fadeIn fadeFirst"><b>Trunk</b></h1>-->
           <p id="heroDesc" class="animated fadeIn fadeFirst">A lightweight respirator, unparalleled in protection and style.</p>
           <div class="email animated fadeIn fadeSecond center-block">
-            <input type="email" placeholder="Subscribe to email updates">
-            <input type="submit" value="Confirm" name="subscribe">
+            <!-- SendinBlue Signup Form HTML Code -->
+            <div id="sib_embed_signup">
+              <div class="wrapper">
+                <input type="hidden" id="sib_embed_signup_lang" value="en">
+                <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again">
+                <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;">
+                  <img src="https://my.sendinblue.com/public/theme/version3/images/loader_sblue.gif" style="display: block;margin-left: auto;margin-right: auto;position: relative;top: 40%;">
+                </div>
+                <form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/25jcu/id/1" onsubmit="return false;">
+                  <input type="hidden" name="js_id" id="js_id" value="25jcu">
+                  <input type="hidden" name="listid" id="listid" value="4">
+                  <input type="hidden" name="from_url" id="from_url" value="yes">
+                  <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
+                  <div class="">
+                    <input type="hidden" name="req_hid" id="req_hid" value="" style="font-size: 13px; font-family: 'Trebuchet MS', Verdana, Tahoma, Geneva, sans-serif;">
+                    <div class="view-messages" style=" margin:5px 0;"> </div>
+                    <div class="email-group ui-sortable">
+                      <div class="row mandatory-email">
+                        <div class="lbl-tinyltr">
+                          <br>
+                        </div>
+                        <input type="text" name="email" id="email" value="" placeholder="Subscribe to email updates">
+                        <button class="button editable " type="submit" data-editfield="subscribe">Confirm</button>
+                        <div class="hidden-btns">
+                          <a class="btn move" href="#"><i class="icon-move"></i></a>
+                          <br>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="byline">
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <script type='text/javascript' src='https://my.sendinblue.com/public/theme/version3/js/subscribe-validate.js'></script>
+            <script type='text/javascript'>
+              jQuery.noConflict(true);
+            </script>
+            <!-- End : SendinBlue Signup Form HTML Code -->
+
+            <!-- <input type="email" placeholder="Subscribe to email updates">
+            <input type="submit" value="Confirm" name="subscribe"> -->
           </div>
         </div>
       </div>

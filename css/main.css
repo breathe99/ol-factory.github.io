@@ -56,7 +56,7 @@ body {
     width: 100%;
 }
 
-input[type="email"] {
+input[type="text"] {
     width: 260px;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
@@ -65,21 +65,22 @@ input[type="email"] {
     -moz-appearance: none;
     appearance: none;
 
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+    -webkit-box-shadow: 1px 1px 3px 1px gray;
+    -moz-box-shadow: 1px 1px 3px 1px gray;
+    box-shadow: 1px 1px 3px 1px gray;
 
-    -webkit-border-radius: none;
-    -moz-border-radius: none;
-    -ms-border-radius: none;
-    -o-border-radius: none;
-    border-radius: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
 
-    color: #fff;
+    color: #1a1a1a;
+    opacity: 0.6;
 
-    padding: 10px;
-    border: solid 4px #03A9F4;
-    background: transparent;
+    padding: 5px 10px;
+    border: none;
+    background: #fff;
 
     -webkit-transition: border 0.3s;
     -moz-transition: border 0.3s;
@@ -87,43 +88,44 @@ input[type="email"] {
     transition: border 0.3s;
 }
 
-input[type="email"]:focus {
+input[type="text"]:focus {
     outline: none;
-    border: solid 4px #fff;
+    opacity: 1;
+
 }
 
 ::-webkit-input-placeholder {
-    color: #fff;
+    color: #1a1a1a;
 }
 :-moz-placeholder {
-   color: #fff;
+   color: #1a1a1a;
    opacity:  1;
 }
 ::-moz-placeholder {
-   color: #fff;
+   color: #1a1a1a;
    opacity:  1;
 }
 :-ms-input-placeholder {
-   color: #fff;
+   color: #1a1a1a;
 }
 
-input[type="email"]:focus::-webkit-input-placeholder {
-    color: #fff;
+input[type="text"]:focus::-webkit-input-placeholder {
+    color: #1a1a1a;
 }
-input[type="email"]:focus:-moz-placeholder {
-   color: #fff;
+input[type="text"]:focus:-moz-placeholder {
+   color: #1a1a1a;
    opacity:  1;
 }
-input[type="email"]:focus::-moz-placeholder {
-   color: #fff;
+input[type="text"]:focus::-moz-placeholder {
+   color: #1a1a1a;
    opacity:  1;
 }
-input[type="email"]:focus:-ms-input-placeholder {
-   color: #fff;
+input[type="text"]:focus:-ms-input-placeholder {
+   color: #1a1a1a;
 }
 
-input[type="submit"] {
-    margin-left: -4px;
+button[type="submit"] {
+    margin-left: 5px;
     width: 110px;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
@@ -132,19 +134,19 @@ input[type="submit"] {
     -moz-appearance: none;
     appearance: none;
 
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+    -webkit-box-shadow: 1px 1px 3px 1px gray;
+    -moz-box-shadow: 1px 1px 3px 1px gray;
+    box-shadow: 1px 1px 3px 1px gray;
 
-    -webkit-border-radius: none;
-    -moz-border-radius: none;
-    -ms-border-radius: none;
-    -o-border-radius: none;
-    border-radius: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
 
-    color: rgba(255,255,255,0.6);
+    color: #fff;
 
-    padding: 14px;
+    padding: 5px 14px;
     border: none;
     background: #03A9F4;
 
@@ -154,11 +156,17 @@ input[type="submit"] {
     transition: background 0.3s;
 }
 
-input[type="submit"]:focus {
+button[type="submit"]:focus {
     outline: none;
     background: #fff;
-    color: rgb(51, 51, 51);
+    color: #1a1a1a;
 }
+/*.message_area {
+  color: white;
+
+  border: none;
+  font-family: 'Raleway', sans-serif;
+}*/
 #mid {
   text-align: center;
 }
@@ -186,6 +194,9 @@ input[type="submit"]:focus {
   #top {
     text-align: center;
   }
+  #headline {
+    margin-top: 40px;
+  }
   #trunk {
     padding: 0;
     width: 100%;
@@ -196,6 +207,9 @@ input[type="submit"]:focus {
   #bottom {
     text-align: center;
     margin-top: 40px;
+  }
+  #heroDesc {
+    margin-bottom: 25px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -210,9 +224,8 @@ input[type="submit"]:focus {
   }
 }
 @media only screen and (max-width: 400px) {
-  input[type="submit"] {
-    margin-left: 0;
-    margin-top: 5px;
+  button[type="submit"] {
+    margin-top: 15px;
     margin-bottom: 30px;
   }
   #heroDesc {
