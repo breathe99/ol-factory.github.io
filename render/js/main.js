@@ -11,25 +11,25 @@ var hero = {
 
     // create main scene
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0003);
+    //this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0003);
 
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
 
     // prepare camera
-    var VIEW_ANGLE = 30, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
+    var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
     this.scene.add(this.camera);
-    this.camera.position.set(30, 20, -50);
+    this.camera.position.set(0, 0, -50);
     this.camera.lookAt(new THREE.Vector3(0,0,0));
 
     // prepare renderer
-    this.renderer = new THREE.WebGLRenderer({ antialias:true });
+    this.renderer = new THREE.WebGLRenderer({ antialias:true, alpha: true });
     this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-    this.renderer.setClearColor(this.scene.fog.color);
+    this.renderer.setClearColor(0x000000, 0);
     this.renderer.shadowMapEnabled = true;
     this.renderer.shadowMapSoft = true;
-
+    
     // prepare container
     this.container = document.createElement('div');
     document.body.appendChild(this.container);
@@ -41,7 +41,8 @@ var hero = {
     // prepare controls (OrbitControls)
     this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
     this.controls.target = new THREE.Vector3(0, 0, 0);
-    this.controls.maxDistance = 2000;
+    this.controls.minDistance = 40;
+    this.controls.maxDistance = 40;
 
     // prepare clock
     this.clock = new THREE.Clock();
@@ -55,17 +56,18 @@ var hero = {
     this.container.appendChild( this.stats.domElement );
 
     // add spot light
-    var spLight = new THREE.SpotLight(0xffffff, 1.75, 2000, Math.PI / 3);
+    var spLight = new THREE.SpotLight(0xffffff, 1.5, 1000, Math.PI / 3);
     spLight.castShadow = true;
-    spLight.position.set(-100, 300, -50);
+    
+    spLight.position.set(20, 50, -100);
     this.scene.add(spLight);
 
     // add simple ground
-    // var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0x999999}) );
-    // ground.receiveShadow = true;
-    // ground.position.set(0, 0, 0);
-    // ground.rotation.x = -Math.PI / 2;
-    // this.scene.add(ground);
+//     var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0xffffff}) );
+//     ground.receiveShadow = true;
+//     ground.position.set(0, -10, 0);
+//     ground.rotation.x = -Math.PI / 2;
+//     this.scene.add(ground);
 
     // load a model
     this.loadModel();
@@ -73,30 +75,63 @@ var hero = {
   loadModel: function() {
 
     // prepare loader and load the model
-var oLoader = new THREE.OBJLoader();
-oLoader.load('models/mask1.obj', function(object, materials) {
+//var oLoader = new THREE.JSONLoader();
+//oLoader.load('models/mask.js', function(object, materials) {
+//
+//  // var material = new THREE.MeshFaceMaterial(materials);
+//  var material2 = new THREE.MeshLambertMaterial({ color: 0xfffffff });
+//
+//  object.traverse( function(child) {
+//    if (child instanceof THREE.Mesh) {
+//
+//      // apply custom material
+//      child.material = material2;
+//
+//      // enable casting shadows
+//      child.castShadow = true;
+//      child.receiveShadow = true;
+//    }
+//  });
+//
+//  object.position.x = 0;
+//  object.position.y = -4;
+//  object.position.z = 0;
+//  object.scale.set(100, 100, 100);
+//  hero.scene.add(object);
+//});
+      
+//      loader = new THREE.JSONLoader();
+//
+//  loader.load('models/mask2.js', function (geometry, materials) {
+//    var mesh, material;
+//
+//    material = new THREE.MeshFaceMaterial(materials);
+//    mesh = new THREE.Mesh(geometry, material);
+//
+//    mesh.scale.set(1, 1, 1);
+//    mesh.receiveShadow = true;
+//    mesh.castShadow = true;
+//
+//    hero.scene.add(mesh);
+//  });
+      loader = new THREE.ColladaLoader();
+      loader.load( './models/mask.dae', function ( collada ) {
+				dae = collada.scene;
+				dae.traverse( function ( child ) {
+					if ( child instanceof THREE.SkinnedMesh ) {
+						var animation = new THREE.Animation( child, child.geometry.animation );
+						animation.play();
+					}
+				} );
+				dae.scale.x = dae.scale.y = dae.scale.z = 1;
+            dae.position.x = 0;
+  dae.position.y = -8;
+  dae.position.z = 0;
+          dae.rotateX(17);
+				dae.updateMatrix();
+          hero.scene.add(dae);
+			} );
 
-  // var material = new THREE.MeshFaceMaterial(materials);
-  var material2 = new THREE.MeshLambertMaterial({ color: 0xfffffff });
-
-  object.traverse( function(child) {
-    if (child instanceof THREE.Mesh) {
-
-      // apply custom material
-      child.material = material2;
-
-      // enable casting shadows
-      child.castShadow = true;
-      child.receiveShadow = true;
-    }
-  });
-
-  object.position.x = 0;
-  object.position.y = -4;
-  object.position.z = 0;
-  object.scale.set(100, 100, 100);
-  hero.scene.add(object);
-});
   }
 };
 
@@ -116,6 +151,12 @@ function update() {
 // Render the scene
 function render() {
   if (hero.renderer) {
+//    var timer = Date.now() * 0.001;
+//
+//    hero.camera.position.x = Math.cos( timer ) * 50;
+//    hero.camera.position.z = Math.sin( timer ) * 50;
+//    hero.camera.lookAt( hero.scene.position );
+   
     hero.renderer.render(hero.scene, hero.camera);
   }
 }
