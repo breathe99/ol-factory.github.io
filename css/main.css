@@ -161,6 +161,11 @@ button[type="submit"]:focus {
     background: #fff;
     color: #1a1a1a;
 }
+.clear-container {
+  padding: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+}
 /*.message_area {
   color: white;
 

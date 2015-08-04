@@ -40,8 +40,8 @@
           <p id="heroDesc" class="animated fadeIn fadeFirst">A lightweight respirator, unparalleled in protection and style.</p>
           <div class="email animated fadeIn fadeSecond center-block">
             <!-- SendinBlue Signup Form HTML Code -->
-            <div id="sib_embed_signup">
-              <div class="wrapper">
+            <div id="sib_embed_signup" style="padding: 10px;">
+              <div class="wrapper" style="position:relative;margin-left: auto;margin-right: auto;">
                 <input type="hidden" id="sib_embed_signup_lang" value="en">
                 <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again">
                 <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;">
@@ -52,24 +52,24 @@
                   <input type="hidden" name="listid" id="listid" value="4">
                   <input type="hidden" name="from_url" id="from_url" value="yes">
                   <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
-                  <div class="">
-                    <input type="hidden" name="req_hid" id="req_hid" value="" style="font-size: 13px; font-family: 'Trebuchet MS', Verdana, Tahoma, Geneva, sans-serif;">
+                  <div class="container rounded clear-container">
+                    <input type="hidden" name="req_hid" id="req_hid" value="" style="font-size: 13px;">
+                    <div class="header">
+                    </div>
                     <div class="view-messages" style=" margin:5px 0;"> </div>
                     <div class="email-group ui-sortable">
                       <div class="row mandatory-email">
-                        <div class="lbl-tinyltr">
+                        <div class="lbl-tinyltr" style="clear: both; float: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
                           <br>
                         </div>
-                        <input type="text" name="email" id="email" value="" placeholder="Subscribe to email updates">
-                        <button class="button editable " type="submit" data-editfield="subscribe">Confirm</button>
-                        <div class="hidden-btns">
-                          <a class="btn move" href="#"><i class="icon-move"></i></a>
-                          <br>
-                        </div>
+                        <input type="text" name="email" id="email" value="">
+                        <button class="button editable " type="submit" data-editfield="subscribe">Subscribe</button>
                       </div>
-                    </div>
-                    <div class="byline">
-
+                      <div style="clear:both;"></div>
+                      <div class="hidden-btns">
+                        <a class="btn move" href="#"><i class="icon-move"></i></a>
+                        <br>
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -81,8 +81,6 @@
             </script>
             <!-- End : SendinBlue Signup Form HTML Code -->
 
-            <!-- <input type="email" placeholder="Subscribe to email updates">
-            <input type="submit" value="Confirm" name="subscribe"> -->
           </div>
         </div>
       </div>
