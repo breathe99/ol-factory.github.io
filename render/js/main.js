@@ -115,14 +115,21 @@ function update() {
   hero.stats.update();
 }
 
+var rotation = true;
+
+function rotate() {
+    var timer = Date.now() * 0.0005;
+
+    hero.camera.position.x = Math.cos( timer ) * 40;
+    hero.camera.position.z = Math.sin( timer ) * 40;
+    hero.camera.lookAt( hero.scene.position );
+}
+
 // Render the scene
 function render() {
   if (hero.renderer) {
-    var timer = Date.now() * 0.0005;
-
-    hero.camera.position.x = Math.cos( timer ) * 50;
-    hero.camera.position.z = Math.sin( timer ) * 50;
-    hero.camera.lookAt( hero.scene.position );
+    
+    if (rotation) { rotate(); }
    
     hero.renderer.render(hero.scene, hero.camera);
   }
@@ -138,6 +145,9 @@ if (Modernizr.webgl && Modernizr.canvas) {
     console.log("supported");
     if (window.addEventListener) {
         window.addEventListener('load', initializeLesson, false);
+        window.addEventListener('click', function() {
+            rotation = false;
+        }, false);
     } else if (window.attachEvent) {
         window.attachEvent('onload', initializeLesson);
     } else {
