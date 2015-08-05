@@ -19,72 +19,77 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" id="top">
-        <img id="olfactory" class="" src="img/OlFactory-Logo.png">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6" id="mid">
-        <img id="trunk" class="" src="img/Trunk_Render.png">
-        <a href="render/">
-          <button id="renderButton" type="button" class="btn btn-default">View in 3D</button>
-        </a>
-        <p class="renderWarning">(warning: this is hard on browsers!)</p>
-      </div>
-      <div class="col-md-6">
-        <div id="headline">
-          <img id="logo" class="animated fadeIn fadeFirst" src="img/Trunk-Logo.png" alt="Trunk Logo">
-          <!--<h1 id="heroText" class="animated fadeIn fadeFirst"><b>Trunk</b></h1>-->
-          <p id="heroDesc" class="animated fadeIn fadeFirst">A lightweight respirator, unparalleled in protection and style.</p>
-          <div class="email animated fadeIn fadeSecond center-block">
-            <!-- SendinBlue Signup Form HTML Code -->
-            <div id="sib_embed_signup" style="padding: 10px;">
-              <div class="wrapper" style="position:relative;margin-left: auto;margin-right: auto;">
-                <input type="hidden" id="sib_embed_signup_lang" value="en">
-                <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again">
-                <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;">
-                  <img src="https://my.sendinblue.com/public/theme/version3/images/loader_sblue.gif" style="display: block;margin-left: auto;margin-right: auto;position: relative;top: 40%;">
-                </div>
-                <form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/25jcu/id/1" onsubmit="return false;">
-                  <input type="hidden" name="js_id" id="js_id" value="25jcu">
-                  <input type="hidden" name="listid" id="listid" value="4">
-                  <input type="hidden" name="from_url" id="from_url" value="yes">
-                  <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
-                  <div class="container rounded clear-container">
-                    <input type="hidden" name="req_hid" id="req_hid" value="" style="font-size: 13px;">
-                    <div class="header">
+<section id="hero">
+      <div class="fluid-container">
+        <div class="row">
+          <div class="col-md-12" id="top">
+            <img id="olfactory" class="animated fadeIn fadeFirst" src="img/OlFactory-Logo.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6" id="mid">
+            <img id="trunk" class="img-responsive animated fadeIn fadeFirst" src="img/Trunk_Render.png">
+            <a href="/render">
+              <button id="renderButton" type="button" class="btn btn-default animated fadeIn fadeFirst">View in 3D</button>
+            </a>
+            <p class="renderWarning animated fadeIn fadeFirst">(warning: this is hard on browsers!)</p>
+          </div>
+          <div class="col-md-6" id="bottom">
+            <div id="headline">
+              <img id="logo" class="animated fadeIn fadeFirst" src="img/Trunk-Logo.png" alt="Trunk Logo">
+              <!--<h1 id="heroText" class="animated fadeIn fadeFirst"><b>Trunk</b></h1>-->
+              <p id="heroDesc" class="animated fadeIn fadeFirst">A lightweight respirator, unparalleled in protection and style.</p>
+              <div class="email animated fadeIn fadeSecond center-block">
+                <!-- SendinBlue Signup Form HTML Code -->
+                <div id="sib_embed_signup" style="padding: 10px;">
+                  <div class="wrapper" style="position:relative;margin-left: auto;margin-right: auto;">
+                    <input type="hidden" id="sib_embed_signup_lang" value="en">
+                    <input type="hidden" id="sib_embed_invalid_email_message" value="That email address is not valid. Please try again">
+                    <div id="sib_loading_gif_area" style="position: absolute;z-index: 9999;display: none;">
+                      <img src="img/pre.gif" style="display: block;margin-left: auto;margin-right: auto;position: relative;top: 40%;">
                     </div>
-                    <div class="view-messages" style=" margin:5px 0;"> </div>
-                    <div class="email-group ui-sortable">
-                      <div class="row mandatory-email">
-                        <div class="lbl-tinyltr" style="clear: both; float: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-                          <br>
+                    <form class="description" id="theform" name="theform" action="https://my.sendinblue.com/users/subscribeembed/js_id/25jcu/id/1" onsubmit="return false;">
+                      <input type="hidden" name="js_id" id="js_id" value="25jcu">
+                      <input type="hidden" name="listid" id="listid" value="4">
+                      <input type="hidden" name="from_url" id="from_url" value="yes">
+                      <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
+                      <div class="container rounded clear-container">
+                        <input type="hidden" name="req_hid" id="req_hid" value="" style="font-size: 13px;">
+                        <div class="header">
                         </div>
-                        <input type="text" name="email" id="email" value="">
-                        <button class="button editable " type="submit" data-editfield="subscribe">Subscribe</button>
+                        <div class="view-messages" style=" margin:5px 0;"> </div>
+                        <div class="email-group ui-sortable">
+                          <div class="row mandatory-email">
+                            <div class="lbl-tinyltr" style="clear: both; float: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                              <br>
+                            </div>
+                            <input type="text" name="email" id="email" value="">
+                            <button class="button editable " type="submit" data-editfield="subscribe">Subscribe</button>
+                          </div>
+                          <div style="clear:both;"></div>
+                          <div class="hidden-btns">
+                            <a class="btn move" href="#"><i class="icon-move"></i></a>
+                            <br>
+                          </div>
+                        </div>
                       </div>
-                      <div style="clear:both;"></div>
-                      <div class="hidden-btns">
-                        <a class="btn move" href="#"><i class="icon-move"></i></a>
-                        <br>
-                      </div>
-                    </div>
+                    </form>
                   </div>
-                </form>
+                </div>
+                <script type='text/javascript' src='https://my.sendinblue.com/public/theme/version3/js/subscribe-validate.js'></script>
+                <script type='text/javascript'>
+                  jQuery.noConflict(true);
+                </script>
+                <!-- End : SendinBlue Signup Form HTML Code -->
               </div>
             </div>
-            <script type='text/javascript' src='https://my.sendinblue.com/public/theme/version3/js/subscribe-validate.js'></script>
-            <script type='text/javascript'>
-              jQuery.noConflict(true);
-            </script>
-            <!-- End : SendinBlue Signup Form HTML Code -->
           </div>
         </div>
       </div>
-    </div>
-  </div>
+  </section>
+  
+  
+  
   <script src="js/jquery.min.js"></script>
 </body>
 

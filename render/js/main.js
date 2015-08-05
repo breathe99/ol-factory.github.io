@@ -11,10 +11,13 @@ var hero = {
 
     // create main scene
     this.scene = new THREE.Scene();
-    //this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0003);
 
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
+
+//    var SCREEN_WIDTH = 500,
+//        SCREEN_HEIGHT = 500;
+
 
     // prepare camera
     var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
@@ -32,6 +35,7 @@ var hero = {
 
     // prepare container
     this.container = document.createElement('div');
+    this.container.setAttribute("class", "render");
     document.body.appendChild(this.container);
     this.container.appendChild(this.renderer.domElement);
 
@@ -115,14 +119,21 @@ function update() {
   hero.stats.update();
 }
 
+var rotation = true;
+
+function rotate() {
+    var timer = Date.now() * 0.0005;
+
+    hero.camera.position.x = Math.cos( timer ) * 40;
+    hero.camera.position.z = Math.sin( timer ) * 40;
+    hero.camera.lookAt( hero.scene.position );
+}
+
 // Render the scene
 function render() {
   if (hero.renderer) {
-    var timer = Date.now() * 0.0005;
 
-    hero.camera.position.x = Math.cos( timer ) * 50;
-    hero.camera.position.z = Math.sin( timer ) * 50;
-    hero.camera.lookAt( hero.scene.position );
+    if (rotation) { rotate(); }
 
     hero.renderer.render(hero.scene, hero.camera);
   }
@@ -138,6 +149,9 @@ if (Modernizr.webgl && Modernizr.canvas) {
     console.log("supported");
     if (window.addEventListener) {
         window.addEventListener('load', initializeLesson, false);
+        window.addEventListener('click', function() {
+            rotation = false;
+        }, false);
     } else if (window.attachEvent) {
         window.attachEvent('onload', initializeLesson);
     } else {
@@ -149,4 +163,4 @@ if (Modernizr.webgl && Modernizr.canvas) {
     notSupported.setAttribute("class", "notSupported");
     notSupported.style.cssText = "text-align: center;";
     document.body.appendChild(notSupported);
-}
+} 
