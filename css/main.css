@@ -24,6 +24,7 @@ body {
     font-family: 'Lato', sans-serif;
     color: rgb(51, 51, 51);
 }
+
 #heroDesc {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
@@ -32,6 +33,7 @@ body {
   margin-bottom: 55px;
   font-size: 24px;
 }
+
 .fadeFirst {
     -webkit-animation-duration: 2s;
     -moz-animation-duration: 2s;
@@ -192,6 +194,15 @@ button[type="submit"]:focus {
   font-size: 16px;
 
   color: #fff;
+}
+
+/* --- render page --- */
+.render {
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
 }
 
 /*Media Queries*/

@@ -15,6 +15,10 @@ var hero = {
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
 
+//    var SCREEN_WIDTH = 500,
+//        SCREEN_HEIGHT = 500;
+
+      
     // prepare camera
     var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
