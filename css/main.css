@@ -2,10 +2,15 @@ body {
   background-color: #cccccc;
 
 }
-#trunk {
-  width: 550px;
-  padding: 25px 0 0 30px;
+
+#hero {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    left: 10%;
+    right: 10%;
 }
+
 #headline {
   /*position: absolute;*/
   margin-top: 100px;
@@ -67,9 +72,9 @@ input[type="text"] {
     -moz-appearance: none;
     appearance: none;
 
-    -webkit-box-shadow: 1px 1px 3px 1px gray;
-    -moz-box-shadow: 1px 1px 3px 1px gray;
-    box-shadow: 1px 1px 3px 1px gray;
+    -webkit-box-shadow: 1px 1px 1px 1px gray;
+    -moz-box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 1px 1px gray;
 
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -84,16 +89,18 @@ input[type="text"] {
     border: none;
     background: #fff;
 
-    -webkit-transition: border 0.3s;
-    -moz-transition: border 0.3s;
-    -o-transition: border 0.3s;
-    transition: border 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 }
 
 input[type="text"]:focus {
     outline: none;
     opacity: 1;
-
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+    -moz-box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
 }
 
 ::-webkit-input-placeholder {
@@ -136,9 +143,9 @@ button[type="submit"] {
     -moz-appearance: none;
     appearance: none;
 
-    -webkit-box-shadow: 1px 1px 3px 1px gray;
-    -moz-box-shadow: 1px 1px 3px 1px gray;
-    box-shadow: 1px 1px 3px 1px gray;
+    -webkit-box-shadow: 1px 1px 1px 1px gray;
+    -moz-box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 1px 1px gray;
 
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -156,6 +163,11 @@ button[type="submit"] {
     -moz-transition: background 0.3s;
     -o-transition: background 0.3s;
     transition: background 0.3s;
+    
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 }
 
 button[type="submit"]:focus {
@@ -163,6 +175,13 @@ button[type="submit"]:focus {
     background: #fff;
     color: #1a1a1a;
 }
+
+button[type="submit"]:hover {
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+    -moz-box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+}
+
 .clear-container {
   padding: 0 !important;
   width: auto !important;
@@ -174,20 +193,62 @@ button[type="submit"]:focus {
   border: none;
   font-family: 'Raleway', sans-serif;
 }*/
+
+#trunk {
+    margin-bottom: 10px;
+}
+
+#top {
+    margin-top: 15px;
+    margin-bottom: 8%;
+}
+
 #mid {
   text-align: center;
 }
+
 #bottom {
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
+
 #renderButton {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   border-radius: 0;
+    
+    margin: 10px;
 
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,1);
   background: #03A9F4;
+    
+    border: none;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    -webkit-box-shadow: 1px 1px 1px 1px gray;
+    -moz-box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 1px 1px gray;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 }
+
+#renderButton:hover {
+    -webkit-box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+    -moz-box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px gray;
+}
+
 .renderWarning {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
