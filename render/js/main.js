@@ -115,7 +115,7 @@ var hero = {
 //    hero.scene.add(mesh);
 //  });
       loader = new THREE.ColladaLoader();
-      loader.load( './models/mask.dae', function ( collada ) {
+      loader.load( './models/mask_lq.dae', function ( collada ) {
 				dae = collada.scene;
 				dae.traverse( function ( child ) {
 					if ( child instanceof THREE.SkinnedMesh ) {
@@ -123,7 +123,7 @@ var hero = {
 						animation.play();
 					}
 				} );
-				dae.scale.x = dae.scale.y = dae.scale.z = 1;
+				dae.scale.x = dae.scale.y = dae.scale.z = .35;
             dae.position.x = 0;
   dae.position.y = -8;
   dae.position.z = 0;
