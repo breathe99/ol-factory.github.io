@@ -101,21 +101,18 @@ var hero = {
 //});
       
 //      loader = new THREE.JSONLoader();
-//
-//  loader.load('models/mask2.js', function (geometry, materials) {
-//    var mesh, material;
-//
-//    material = new THREE.MeshFaceMaterial(materials);
-//    mesh = new THREE.Mesh(geometry, material);
-//
-//    mesh.scale.set(1, 1, 1);
-//    mesh.receiveShadow = true;
-//    mesh.castShadow = true;
-//
-//    hero.scene.add(mesh);
-//  });
+//  loader.load({
+//    model: "./models/mask.js",
+//    callback: function(geometry) {
+//        mesh = new THREE.Mesh(geometry,new THREE.MeshFaceMaterial);
+//        mesh.position.set(0,0,0);
+//        //mesh.scale.set(20,20,20);
+//        scene.add(mesh);
+//        renderer.render(scene, camera);
+//    }
+//});
       loader = new THREE.ColladaLoader();
-      loader.load( './models/mask.dae', function ( collada ) {
+      loader.load( './models/mask_smallish.dae', function ( collada ) {
 				dae = collada.scene;
 				dae.traverse( function ( child ) {
 					if ( child instanceof THREE.SkinnedMesh ) {
@@ -123,7 +120,7 @@ var hero = {
 						animation.play();
 					}
 				} );
-				dae.scale.x = dae.scale.y = dae.scale.z = 1;
+				dae.scale.x = dae.scale.y = dae.scale.z = .3;
             dae.position.x = 0;
   dae.position.y = -8;
   dae.position.z = 0;
