@@ -152,6 +152,7 @@ input[type="text"]:focus:-ms-input-placeholder {
 
 button[type="submit"] {
     margin-left: 5px;
+    margin-top: 10px;
     width: 110px;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
