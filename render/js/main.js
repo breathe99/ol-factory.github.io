@@ -61,6 +61,13 @@ var hero = {
     
     spLight.position.set(20, 50, -100);
     this.scene.add(spLight);
+    
+    // add second spot light
+    var spLight2 = new THREE.SpotLight(0xffffff, .3, 1000, Math.PI / 3);
+    spLight2.castShadow = true;
+    
+    spLight2.position.set(20, 50, 100);
+    this.scene.add(spLight2);
 
     // add simple ground
 //     var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0xffffff}) );
@@ -74,46 +81,6 @@ var hero = {
   },
   loadModel: function() {
 
-    // prepare loader and load the model
-//var oLoader = new THREE.JSONLoader();
-//oLoader.load('models/mask.js', function(object, materials) {
-//
-//  // var material = new THREE.MeshFaceMaterial(materials);
-//  var material2 = new THREE.MeshLambertMaterial({ color: 0xfffffff });
-//
-//  object.traverse( function(child) {
-//    if (child instanceof THREE.Mesh) {
-//
-//      // apply custom material
-//      child.material = material2;
-//
-//      // enable casting shadows
-//      child.castShadow = true;
-//      child.receiveShadow = true;
-//    }
-//  });
-//
-//  object.position.x = 0;
-//  object.position.y = -4;
-//  object.position.z = 0;
-//  object.scale.set(100, 100, 100);
-//  hero.scene.add(object);
-//});
-      
-//      loader = new THREE.JSONLoader();
-//
-//  loader.load('models/mask2.js', function (geometry, materials) {
-//    var mesh, material;
-//
-//    material = new THREE.MeshFaceMaterial(materials);
-//    mesh = new THREE.Mesh(geometry, material);
-//
-//    mesh.scale.set(1, 1, 1);
-//    mesh.receiveShadow = true;
-//    mesh.castShadow = true;
-//
-//    hero.scene.add(mesh);
-//  });
       loader = new THREE.ColladaLoader();
       loader.load( './models/mask_lq.dae', function ( collada ) {
 				dae = collada.scene;
@@ -151,11 +118,11 @@ function update() {
 // Render the scene
 function render() {
   if (hero.renderer) {
-//    var timer = Date.now() * 0.001;
-//
-//    hero.camera.position.x = Math.cos( timer ) * 50;
-//    hero.camera.position.z = Math.sin( timer ) * 50;
-//    hero.camera.lookAt( hero.scene.position );
+    var timer = Date.now() * 0.0005;
+
+    hero.camera.position.x = Math.cos( timer ) * 50;
+    hero.camera.position.z = Math.sin( timer ) * 50;
+    hero.camera.lookAt( hero.scene.position );
    
     hero.renderer.render(hero.scene, hero.camera);
   }
