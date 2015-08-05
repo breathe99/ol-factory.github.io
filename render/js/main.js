@@ -11,8 +11,7 @@ var hero = {
 
     // create main scene
     this.scene = new THREE.Scene();
-    //this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0003);
-
+    
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
 
@@ -32,6 +31,7 @@ var hero = {
     
     // prepare container
     this.container = document.createElement('div');
+    this.container.setAttribute("class", "render");
     document.body.appendChild(this.container);
     this.container.appendChild(this.renderer.domElement);
 
