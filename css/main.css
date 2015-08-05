@@ -1,6 +1,15 @@
 body {
-  background-color: #cccccc;
+    height: 100vh;
+}
 
+.bgGradient {
+      /* fallback */
+  background-color: #cccccc;
+    
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#D5D5D5), to(#919191));
+  background: -webkit-radial-gradient(circle, #D5D5D5, #919191);
+  background: -moz-radial-gradient(circle, #D5D5D5, #919191);
+  background: -ms-radial-gradient(circle, #D5D5D5, #919191);
 }
 
 #hero {
@@ -37,6 +46,14 @@ body {
   margin-top: 40px;
   margin-bottom: 55px;
   font-size: 24px;
+}
+
+#heroSub {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: -20px;
+  font-size: 16px;
 }
 
 .fadeFirst {
@@ -194,8 +211,17 @@ button[type="submit"]:hover {
   font-family: 'Raleway', sans-serif;
 }*/
 
+#olfactory {
+    pointer-events: none;
+}
+
 #trunk {
+    pointer-events: none;
     margin-bottom: 10px;
+}
+
+#logo {
+    pointer-events: none;
 }
 
 #top {
@@ -266,6 +292,11 @@ button[type="submit"]:hover {
     position: absolute;
     display: block;
     width: 100%;
+}
+
+.overlay img {
+    margin: 10px auto;
+    display: block;
 }
 
 .overlay h1 {
