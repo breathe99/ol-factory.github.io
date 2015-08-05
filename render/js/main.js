@@ -29,7 +29,7 @@ var hero = {
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.shadowMapEnabled = true;
     this.renderer.shadowMapSoft = true;
-    
+
     // prepare container
     this.container = document.createElement('div');
     document.body.appendChild(this.container);
@@ -58,9 +58,16 @@ var hero = {
     // add spot light
     var spLight = new THREE.SpotLight(0xffffff, 1.5, 1000, Math.PI / 3);
     spLight.castShadow = true;
-    
+
     spLight.position.set(20, 50, -100);
     this.scene.add(spLight);
+
+    // add second spot light
+    var spLight2 = new THREE.SpotLight(0xffffff, .3, 1000, Math.PI / 3);
+    spLight2.castShadow = true;
+
+    spLight2.position.set(20, 50, 100);
+    this.scene.add(spLight2);
 
     // add simple ground
 //     var ground = new THREE.Mesh( new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({color:0xffffff}) );
@@ -74,45 +81,8 @@ var hero = {
   },
   loadModel: function() {
 
-    // prepare loader and load the model
-//var oLoader = new THREE.JSONLoader();
-//oLoader.load('models/mask.js', function(object, materials) {
-//
-//  // var material = new THREE.MeshFaceMaterial(materials);
-//  var material2 = new THREE.MeshLambertMaterial({ color: 0xfffffff });
-//
-//  object.traverse( function(child) {
-//    if (child instanceof THREE.Mesh) {
-//
-//      // apply custom material
-//      child.material = material2;
-//
-//      // enable casting shadows
-//      child.castShadow = true;
-//      child.receiveShadow = true;
-//    }
-//  });
-//
-//  object.position.x = 0;
-//  object.position.y = -4;
-//  object.position.z = 0;
-//  object.scale.set(100, 100, 100);
-//  hero.scene.add(object);
-//});
-      
-//      loader = new THREE.JSONLoader();
-//  loader.load({
-//    model: "./models/mask.js",
-//    callback: function(geometry) {
-//        mesh = new THREE.Mesh(geometry,new THREE.MeshFaceMaterial);
-//        mesh.position.set(0,0,0);
-//        //mesh.scale.set(20,20,20);
-//        scene.add(mesh);
-//        renderer.render(scene, camera);
-//    }
-//});
       loader = new THREE.ColladaLoader();
-      loader.load( './models/mask_smallish.dae', function ( collada ) {
+      loader.load( './models/mask_lq.dae', function ( collada ) {
 				dae = collada.scene;
 				dae.traverse( function ( child ) {
 					if ( child instanceof THREE.SkinnedMesh ) {
@@ -120,7 +90,7 @@ var hero = {
 						animation.play();
 					}
 				} );
-				dae.scale.x = dae.scale.y = dae.scale.z = .3;
+				dae.scale.x = dae.scale.y = dae.scale.z = .35;
             dae.position.x = 0;
   dae.position.y = -8;
   dae.position.z = 0;
@@ -148,12 +118,12 @@ function update() {
 // Render the scene
 function render() {
   if (hero.renderer) {
-//    var timer = Date.now() * 0.001;
-//
-//    hero.camera.position.x = Math.cos( timer ) * 50;
-//    hero.camera.position.z = Math.sin( timer ) * 50;
-//    hero.camera.lookAt( hero.scene.position );
-   
+    var timer = Date.now() * 0.0005;
+
+    hero.camera.position.x = Math.cos( timer ) * 50;
+    hero.camera.position.z = Math.sin( timer ) * 50;
+    hero.camera.lookAt( hero.scene.position );
+
     hero.renderer.render(hero.scene, hero.camera);
   }
 }
@@ -179,4 +149,4 @@ if (Modernizr.webgl && Modernizr.canvas) {
     notSupported.setAttribute("class", "notSupported");
     notSupported.style.cssText = "text-align: center;";
     document.body.appendChild(notSupported);
-} 
+}
