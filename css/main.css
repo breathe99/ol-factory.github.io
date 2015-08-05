@@ -264,6 +264,21 @@ button[type="submit"]:hover {
 
 .overlay {
     position: absolute;
+    display: block;
+    width: 100%;
+}
+
+.overlay h1 {
+    text-align: center;
+    color: white;
+    font-family: Lato, sans-serif;
+    font-size: 56px;
+}
+
+.overlay p {
+    text-align: center;
+    color: white;
+    font-family: Lato, sans-serif;
 }
 
 /*Media Queries*/
