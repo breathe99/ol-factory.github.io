@@ -14,16 +14,12 @@ var hero = {
     
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
-
-//    var SCREEN_WIDTH = 500,
-//        SCREEN_HEIGHT = 500;
-
       
     // prepare camera
     var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
     this.scene.add(this.camera);
-    this.camera.position.set(0, 0, -50);
+    this.camera.position.set(0, 0, -60);
     this.camera.lookAt(new THREE.Vector3(0,0,0));
 
     // prepare renderer
