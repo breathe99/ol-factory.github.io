@@ -11,10 +11,10 @@ var hero = {
 
     // create main scene
     this.scene = new THREE.Scene();
-    
+
     var SCREEN_WIDTH = window.innerWidth,
         SCREEN_HEIGHT = window.innerHeight;
-      
+
     // prepare camera
     var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
@@ -28,7 +28,7 @@ var hero = {
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.shadowMapEnabled = true;
     this.renderer.shadowMapSoft = true;
-    
+
     // prepare container
     this.container = document.createElement('div');
     this.container.setAttribute("class", "render");
@@ -58,14 +58,14 @@ var hero = {
     // add spot light
     var spLight = new THREE.SpotLight(0xffffff, 1.5, 1000, Math.PI / 3);
     spLight.castShadow = true;
-    
+
     spLight.position.set(20, 50, -100);
     this.scene.add(spLight);
-    
+
     // add second spot light
     var spLight2 = new THREE.SpotLight(0xffffff, .3, 1000, Math.PI / 3);
     spLight2.castShadow = true;
-    
+
     spLight2.position.set(20, 50, 100);
     this.scene.add(spLight2);
 
@@ -128,9 +128,9 @@ function rotate() {
 // Render the scene
 function render() {
   if (hero.renderer) {
-    
+
     if (rotation) { rotate(); }
-   
+
     hero.renderer.render(hero.scene, hero.camera);
   }
 }
@@ -159,4 +159,4 @@ if (Modernizr.webgl && Modernizr.canvas) {
     notSupported.setAttribute("class", "notSupported");
     notSupported.style.cssText = "text-align: center;";
     document.body.appendChild(notSupported);
-} 
+}
